@@ -10,67 +10,125 @@
             {"id": 4, "desc": "See the endangered Gangetic dolphin"}
         ],
         "facility": [
-            {"name": "", "details": ""},
-            {"name": "", "details": ""},
-            {"name": "", "details": ""}
+            {"name": "Expert Guidance"},
+            {"name": "Safety And Security"},
+            {"name": "3 time Food Serve"}
+        ],
+        "tour_date_time": [
+            {"days": 3, "date": "21-11-2022"}
         ],
         "Things_to_Carry": "(1) Windbreaker / raincoat / umbrella (2) Snicker shoes for walking. (3) Hat / Cap for Sun protection. (4) Sun-burn lotion & insects spray. (5) Binoculars (6) Camera & films (7) Toothpaste & tooth brush (8) Towels (9) Bath soap (10.) Emergency medicine. (11) Flash light.",
         "rating": 4.5,
-        "price": 2000
+        "price": 7000
     },
     {
         "package_name": "Cox's_bazar_tour",
         "img": "https://i.ibb.co/vB6zKj0/cox-sImg.jpg",
-        "description": "",
-        "facility": [
-            {"name": "", "details": ""},
-            {"name": "", "details": ""},
-            {"name": "", "details": ""}
+        "description": "The City of British captain Hiram Cox. Having the world's longest unbroken sandy sea beach (120 km) sloping gently down to the blue water of the Bay of Bengal. In Cox's Bazar have many colorful Pagodas, Buddhist Temples, Dry fish center etc. The beauty of sun setting on the rolling sea wave and moonlit night is simply captivating. All together give the aura of the fairyland a Tourist Paradise. Interesting place around Cox's Bazar Himchari, Ramu, Sonadia Island, Moheshkalil Island, Teknef, and St. Martin Island.",
+        "tour_feature": [
+            {"id": 1, "desc": "Dhaka-Cox's Bazar-Dhaka by AC Volvo bus ticket"},
+            {"id": 2, "desc": "02 night 03 days double sharing accommodation at Hotel Sea Crown or kollol at Cox’s Bazar."},
+            {"id": 3, "desc": "Breakfast at hotel Sightseeing to Himchory & Innani by open Jeep"},
+            {"id": 4, "desc": "All time take care by experienced guide during the trip (Driver come guide)"}
         ],
+        "facility": [
+            {"name": "Expert Guidance"},
+            {"name": "Safety And Security"},
+            {"name": "3 time Food Serve"}
+        ],
+        "tour_date_time": [
+            {"days": 2, "date": "21-11-2022"}
+        ],
+        "Things_to_Carry": "(1) Windbreaker / raincoat / umbrella (2) Snicker shoes for walking. (3) Hat / Cap for Sun protection. (4) Sun-burn lotion & insects spray. (5) Binoculars (6) Camera & films (7) Toothpaste & tooth brush (8) Towels (9) Bath soap (10.) Emergency medicine",
+        "rating": 4.5,
         "price": 1500
     },
     {
         "package_name": "RangaMati_tour",
         "img": "https://i.ibb.co/g9mW0Kp/rangamati.jpg",
         "description": "",
-        "facility": [
-            {"name": "", "details": ""},
-            {"name": "", "details": ""},
-            {"name": "", "details": ""}
+        "tour_feature": [
+            {"id": 1, "desc": "3 days on our chartered boat"},
+            {"id": 2, "desc": "Tiger tracking on foot"},
+            {"id": 3, "desc": "Hike through the Sundarbans Mangrove"},
+            {"id": 4, "desc": "See the endangered Gangetic dolphin"}
         ],
+        "facility": [
+            {"name": "Expert Guidance"},
+            {"name": "Safety And Security"},
+            {"name": "3 time Food Serve"}
+        ],
+        "tour_date_time": [
+            {"days": 2, "date": "21-11-2022"}
+        ],
+        "Things_to_Carry": "(1) Windbreaker / raincoat / umbrella (2) Snicker shoes for walking. (3) Hat / Cap for Sun protection. (4) Sun-burn lotion & insects spray. (5) Binoculars (6) Camera & films (7) Toothpaste & tooth brush (8) Towels (9) Bath soap (10.) Emergency medicine. (11) Flash light.",
+        "rating": 4.5,
         "price": 2500
     },
     {
         "package_name": "Saint_Martin_tour",
         "img": "https://i.ibb.co/TWbh7C6/saint-martin-s-island.jpg",
         "description": "",
-        "facility": [
-            {"name": "", "details": ""},
-            {"name": "", "details": ""},
-            {"name": "", "details": ""}
+        "tour_feature": [
+            {"id": 1, "desc": "3 days on our chartered boat"},
+            {"id": 2, "desc": "Tiger tracking on foot"},
+            {"id": 3, "desc": "Hike through the Sundarbans Mangrove"},
+            {"id": 4, "desc": "See the endangered Gangetic dolphin"}
         ],
+        "facility": [
+            {"name": "Expert Guidance"},
+            {"name": "Safety And Security"},
+            {"name": "3 time Food Serve"}
+        ],
+        "tour_date_time": [
+            {"days": 2, "date": "21-11-2022"}
+        ],
+        "Things_to_Carry": "(1) Windbreaker / raincoat / umbrella (2) Snicker shoes for walking. (3) Hat / Cap for Sun protection. (4) Sun-burn lotion & insects spray. (5) Binoculars (6) Camera & films (7) Toothpaste & tooth brush (8) Towels (9) Bath soap (10.) Emergency medicine. (11) Flash light.",
+        "rating": 4.5,
         "price": 10000
     },
     {
         "package_name": "Sylhet_tour",
         "img": "https://i.ibb.co/4sn6nGB/syhlet.jpg",
         "description": "",
-        "facility": [
-            {"name": "", "details": ""},
-            {"name": "", "details": ""},
-            {"name": "", "details": ""}
+        "tour_feature": [
+            {"id": 1, "desc": "3 days on our chartered boat"},
+            {"id": 2, "desc": "Tiger tracking on foot"},
+            {"id": 3, "desc": "Hike through the Sundarbans Mangrove"},
+            {"id": 4, "desc": "See the endangered Gangetic dolphin"}
         ],
+        "facility": [
+            {"name": "Expert Guidance"},
+            {"name": "Safety And Security"},
+            {"name": "3 time Food Serve"}
+        ],
+        "tour_date_time": [
+            {"days": 2, "date": "21-11-2022"}
+        ],
+        "Things_to_Carry": "(1) Windbreaker / raincoat / umbrella (2) Snicker shoes for walking. (3) Hat / Cap for Sun protection. (4) Sun-burn lotion & insects spray. (5) Binoculars (6) Camera & films (7) Toothpaste & tooth brush (8) Towels (9) Bath soap (10.) Emergency medicine. (11) Flash light.",
+        "rating": 4.5,
         "price": 1600
     },
     {
         "package_name": "Tanguar_Hawor_tour",
         "img": "https://i.ibb.co/HCjBRyc/Tanguar-Haor-o-jadukata-nodi.jpg",
         "description": "",
-        "facility": [
-            {"name": "", "details": ""},
-            {"name": "", "details": ""},
-            {"name": "", "details": ""}
+        "tour_feature": [
+            {"id": 1, "desc": "3 days on our chartered boat"},
+            {"id": 2, "desc": "Tiger tracking on foot"},
+            {"id": 3, "desc": "Hike through the Sundarbans Mangrove"},
+            {"id": 4, "desc": "See the endangered Gangetic dolphin"}
         ],
+        "facility": [
+            {"name": "Expert Guidance"},
+            {"name": "Safety And Security"},
+            {"name": "3 time Food Serve"}
+        ],
+        "tour_date_time": [
+            {"days": 2, "date": "21-11-2022"}
+        ],
+        "Things_to_Carry": "(1) Windbreaker / raincoat / umbrella (2) Snicker shoes for walking. (3) Hat / Cap for Sun protection. (4) Sun-burn lotion & insects spray. (5) Binoculars (6) Camera & films (7) Toothpaste & tooth brush (8) Towels (9) Bath soap (10.) Emergency medicine. (11) Flash light.",
+        "rating": 4.5,
         "price": 3500
     }
 ]
