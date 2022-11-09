@@ -18,18 +18,27 @@ async function run(){
 
         app.get('/service', async(req, res) => {
             const query = {};
-            const cursor = serviceCollection.find(query);
+            const cursor = serviceCollection.find(query).sort({_id: -1});
             const services = await cursor.limit(3).toArray();
             // const count = await serviceCollection.estimatedDocumentCount();
             res.send(services);
         })
 
+        //service api
+        app.post('/service', async (req, res) => {
+            const addService = req.body;
+            const result = await serviceCollection.insertOne(addService);
+            res.send(result)
+        })
+
         app.get('/services', async(req, res) => {
+            const page = parseInt(req.query.page);
+            const size = parseInt(req.query.size);
             const query = {};
             const cursor = serviceCollection.find(query);
-            const services = await cursor.toArray();
-            // const count = await serviceCollection.estimatedDocumentCount();
-            res.send(services);
+            const services = await cursor.skip(page*size).limit(10).toArray();
+            const count = await serviceCollection.estimatedDocumentCount();
+            res.send({ count, services });
         })
 
         app.get('/services/:id', async (req, res) => {
