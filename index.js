@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const jwt = require('jsonwebtoken');
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const port = process.env.PORT || 5000;
 const app = express();
@@ -11,10 +12,28 @@ app.use(express.json());
 const uri = `mongodb+srv://${process.env.USER_DB}:${process.env.USER_PASSWORD}@cluster0.iqotg9c.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
+const verifyJWT = (req, res, next) => {
+    const authorHeader = req.header.authorization;
+    if(!authorHeader){
+        res.status(401).send({message: 'unauthorized access'})
+    }
+    const token = authorHeader.split(' ')[1];
+    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, function (err, decode) {
+        if(err){
+            res.status(403).send({message: 'Forbidden access'})
+        }
+        req.decoded = decode;
+        next();
+    })
+}
+
 async function run(){
     try{
         const serviceCollection = client.db('gotravel').collection('services');
         const reviewCollection = client.db('gotravel').collection('review');
+
+        //generate to access token by default
+        // require('crypto').randomBytes(64).toString('hex')
 
         app.get('/service', async(req, res) => {
             const query = {};
