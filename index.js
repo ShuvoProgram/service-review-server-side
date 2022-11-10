@@ -35,6 +35,12 @@ async function run(){
         //generate to access token by default
         // require('crypto').randomBytes(64).toString('hex')
 
+        app.post('/jwt', (req, res) => {
+            const user = req.body;
+            const token = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1d' })
+            res.send({ token })
+        })
+
         app.get('/service', async(req, res) => {
             const query = {};
             const cursor = serviceCollection.find(query).sort({_id: -1});
@@ -44,7 +50,7 @@ async function run(){
         })
 
         //service api
-        app.post('/service', async (req, res) => {
+        app.post('/service', verifyJWT, async (req, res) => {
             const addService = req.body;
             const result = await serviceCollection.insertOne(addService);
             res.send(result)
@@ -68,25 +74,49 @@ async function run(){
         })
 
         //review api
-        app.post('/review', async(req, res) => {
+        app.post('/review', verifyJWT, async(req, res) => {
             const review = req.body;
             const result = await reviewCollection.insertOne(review);
             res.send(result)
         })
 
-        app.get('/review', async(req, res) => {
-            // const reviewId = req.params.id;
-            // const query = { _id: ObjectId(reviewId)};
-            const query = {};
-            const cursor = reviewCollection.find(query);
+        app.get('/review', verifyJWT, async(req, res) => {
+            const decoded = req.decoded;
+            if(decoded.email != req.query.email){
+            
+               return res.status(403).send({ message: 'unauthorized access' })
+
+            }
+            let query = {};
+            if (req.query.email) {
+                query = {
+                    email: req.query.email
+                }
+            }
+            const cursor = reviewCollection.find(query).sort({date: -1});
             const review = await cursor.toArray();
             res.send(review);
         })
 
-        app.delete('/review/:id', async(req, res) => {
+        app.delete('/review/:id', verifyJWT, async(req, res) => {
             const id = req.params.id;
             const query = {_id: ObjectId(id)};
             const result = await reviewCollection.deleteOne(query);
+            res.send(result);
+        })
+
+        app.put('/review/:id', async (req, res) => {
+            const id = req.params.id;
+            const reviewFilter = {_id: ObjectId(id)};
+            const review = req.body;
+            const option = {upsert : true};
+            const updateReview = {
+                $set: {
+                    message: review.message,
+                    rating: review.rating
+                }
+            }
+            const result = await reviewCollection.updateOne(reviewFilter, updateReview, option);
             res.send(result);
         })
 
