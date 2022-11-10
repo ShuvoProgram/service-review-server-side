@@ -50,7 +50,7 @@ async function run(){
         })
 
         //service api
-        app.post('/service', verifyJWT, async (req, res) => {
+        app.post('/services', async (req, res) => {
             const addService = req.body;
             const result = await serviceCollection.insertOne(addService);
             res.send(result)
@@ -74,52 +74,52 @@ async function run(){
         })
 
         //review api
-        app.post('/review', verifyJWT, async(req, res) => {
+        app.post('/review', async(req, res) => {
             const review = req.body;
             const result = await reviewCollection.insertOne(review);
             res.send(result)
         })
 
-        app.get('/review', verifyJWT, async(req, res) => {
-            const decoded = req.decoded;
-            if(decoded.email != req.query.email){
+        app.get('/review', async(req, res) => {
+            // const decoded = req.decoded;
+            // if(decoded.email != req.query.email){
             
-               return res.status(403).send({ message: 'unauthorized access' })
+            //    return res.status(403).send({ message: 'unauthorized access' })
 
-            }
+            // }
             let query = {};
             if (req.query.email) {
                 query = {
                     email: req.query.email
                 }
             }
-            const cursor = reviewCollection.find(query).sort({date: -1});
+            const cursor = reviewCollection.find(query).sort({_id: -1});
             const review = await cursor.toArray();
             res.send(review);
         })
 
-        app.delete('/review/:id', verifyJWT, async(req, res) => {
+        app.delete('/review/:id', async(req, res) => {
             const id = req.params.id;
             const query = {_id: ObjectId(id)};
             const result = await reviewCollection.deleteOne(query);
             res.send(result);
         })
 
-        app.put('/review/:id', async (req, res) => {
+        app.put('/edit/:id', async (req, res) => {
             const id = req.params.id;
             const reviewFilter = {_id: ObjectId(id)};
             const review = req.body;
+            console.log(id, review);
             const option = {upsert : true};
             const updateReview = {
                 $set: {
-                    message: review.message,
+                    description: review.field,
                     rating: review.rating
                 }
             }
             const result = await reviewCollection.updateOne(reviewFilter, updateReview, option);
             res.send(result);
         })
-
     }
     finally{
 
