@@ -32,8 +32,7 @@ async function run(){
         const serviceCollection = client.db('gotravel').collection('services');
         const reviewCollection = client.db('gotravel').collection('review');
 
-        //generate to access token by default
-        // require('crypto').randomBytes(64).toString('hex')
+        
 
         app.post('/jwt', (req, res) => {
             const user = req.body;
@@ -81,12 +80,7 @@ async function run(){
         })
 
         app.get('/review', async(req, res) => {
-            // const decoded = req.decoded;
-            // if(decoded.email != req.query.email){
-            
-            //    return res.status(403).send({ message: 'unauthorized access' })
 
-            // }
             let query = {};
             if (req.query.email) {
                 query = {
